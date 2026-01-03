@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5c3mxbkebfp3"]
+
+[ext_resource type="FontFile" uid="uid://7ou8rhdstm6q" path="res://assets/snake_godot_assets/assets/MaldiniBold.ttf" id="1_eu4r6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sv1vk"]
+bg_color = Color(1.8289685e-06, 0.68548137, 0.69469863, 1)
+
+[node name="score_hud" type="CanvasLayer"]
+
+[node name="score_panel" type="Panel" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sv1vk")
+
+[node name="score_label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -74.5
+offset_top = -5.0
+offset_right = 74.5
+offset_bottom = 50.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_eu4r6")
+theme_override_font_sizes/font_size = 40
+text = "SCORE : X"
+horizontal_alignment = 1
+vertical_alignment = 1

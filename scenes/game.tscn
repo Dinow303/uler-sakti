@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://c34gud4tg7gq0"]
+
+[ext_resource type="Script" uid="uid://dnsq3xvomd4kf" path="res://scripts/game.gd" id="1_yqjtg"]
+[ext_resource type="Texture2D" uid="uid://dxsq5ar4hf3jr" path="res://assets/snake_godot_assets/assets/bg.png" id="2_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://c5c3mxbkebfp3" path="res://scenes/score_hud.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://blvcawci43r0v" path="res://scenes/snake.tscn" id="4_lbhrr"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_yqjtg")
+snake_scene = ExtResource("4_lbhrr")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(500, 550)
+texture = ExtResource("2_lnu2h")
+
+[node name="score_hud" parent="." instance=ExtResource("3_lnu2h")]
