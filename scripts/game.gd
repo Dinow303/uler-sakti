@@ -25,6 +25,7 @@ func _ready() -> void:
 
 func newgame():
 	score = 0
+	gamestarted = true
 	score_hud.get_node("score_label").text = "Score: %d" % score
 	can_move = true
 	generate_snake()
@@ -43,16 +44,16 @@ func add_segment(_pos:Vector2):
 	snake.append(SnakeSegment)
 	add_child(SnakeSegment)
 
-func input():
+func _input(event):
 	if not can_move:
 		return
-	if Input.is_action_pressed("ui_up") and direction != Vector2.DOWN:
+	if event.is_action_pressed("ui_up") and direction != Vector2.DOWN:
 		next_direction = Vector2.UP
-	elif Input.is_action_pressed("ui_down") and direction != Vector2.UP:
+	elif event.is_action_pressed("ui_down") and direction != Vector2.UP:
 		next_direction = Vector2.DOWN
-	elif Input.is_action_pressed("ui_left") and direction != Vector2.RIGHT:
+	elif event.is_action_pressed("ui_left") and direction != Vector2.RIGHT:
 		next_direction = Vector2.LEFT
-	elif Input.is_action_pressed("ui_right") and direction != Vector2.LEFT:
+	elif event.is_action_pressed("ui_right") and direction != Vector2.LEFT:
 		next_direction = Vector2.RIGHT
 
 func move_snake():
@@ -64,6 +65,15 @@ func move_snake():
 	# move head
 	snake_data[0] += direction
 
+func update_snake():
+	for i in range(snake.size()):
+		snake[i].position = (snake_data[i] * cells_size) + Vector2(0, cells_size)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
+	
+func _on_wait_time_timeout() -> void:
+	if gamestarted and can_move:
+		move_snake()
+		update_snake()

@@ -14,3 +14,9 @@ position = Vector2(500, 550)
 texture = ExtResource("2_lnu2h")
 
 [node name="score_hud" parent="." instance=ExtResource("3_lnu2h")]
+
+[node name="wait time" type="Timer" parent="."]
+wait_time = 0.15
+autostart = true
+
+[connection signal="timeout" from="wait time" to="." method="_on_wait_time_timeout"]
