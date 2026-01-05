@@ -16,6 +16,7 @@ var next_direction := Vector2.RIGHT
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	can_move = true
 	generate_snake()
 
 func generate_snake():
@@ -32,6 +33,18 @@ func add_segment(_pos:Vector2):
 	snake.append(SnakeSegment)
 	add_child(SnakeSegment)
 
+func _input(event):
+	if not can_move:
+		return
+	if event.is_action_pressed("ui_up") and direction != Vector2.DOWN:
+		next_direction = Vector2.UP
+	elif event.is_action_pressed("ui_down") and direction != Vector2.UP:
+		next_direction = Vector2.DOWN
+	elif event.is_action_pressed("ui_left") and direction != Vector2.RIGHT:
+		next_direction = Vector2.LEFT
+	elif event.is_action_pressed("ui_right") and direction != Vector2.LEFT:
+		next_direction = Vector2.RIGHT
+
 func move_snake():
 	direction = next_direction
 	old_data = snake_data.duplicate()
@@ -44,7 +57,6 @@ func move_snake():
 func update_snake():
 	for i in range(snake.size()):
 		snake[i].position = (snake_data[i] * cells_size) + Vector2(0, cells_size)
-		print("POS:", snake[i].position)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
