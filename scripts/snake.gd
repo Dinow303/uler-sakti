@@ -58,6 +58,10 @@ func update_snake():
 	for i in range(snake.size()):
 		snake[i].position = (snake_data[i] * cells_size) + Vector2(0, cells_size)
 
+func grow():
+	var tail = old_data[-1]
+	add_segment(tail)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass

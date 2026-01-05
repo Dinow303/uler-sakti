@@ -3,6 +3,7 @@ extends Node
 @export var snake_scene :PackedScene
 @onready var score_hud: CanvasLayer = $score_hud
 @onready var snake: Node2D = $Snake
+@onready var apple: Area2D = $Apple
 
 # game var
 var score:int
@@ -19,6 +20,8 @@ func newgame():
 	score = 0
 	gamestarted = true
 	score_hud.get_node("score_label").text = "Score: %d" % score
+	randomize()
+	apple.randomize_position(snake.snake_data)
 
 func _on_wait_time_timeout() -> void:
 	if gamestarted:
@@ -28,3 +31,7 @@ func _on_wait_time_timeout() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
+
+
+func _on_apple_area_entered(area: Area2D) -> void:
+	pass # Replace with function body.

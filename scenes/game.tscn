@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c34gud4tg7gq0"]
+[gd_scene load_steps=6 format=3 uid="uid://c34gud4tg7gq0"]
 
 [ext_resource type="Script" uid="uid://dnsq3xvomd4kf" path="res://scripts/game.gd" id="1_yqjtg"]
 [ext_resource type="Texture2D" uid="uid://dxsq5ar4hf3jr" path="res://assets/snake_godot_assets/assets/bg.png" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://c5c3mxbkebfp3" path="res://scenes/score_hud.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://blvcawci43r0v" path="res://scenes/snake.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://bv5vgom43s7hw" path="res://scenes/apple.tscn" id="5_iywne"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_yqjtg")
@@ -20,4 +21,7 @@ autostart = true
 
 [node name="Snake" parent="." instance=ExtResource("4_lbhrr")]
 
+[node name="Apple" parent="." instance=ExtResource("5_iywne")]
+
 [connection signal="timeout" from="wait time" to="." method="_on_wait_time_timeout"]
+[connection signal="area_entered" from="Apple" to="." method="_on_apple_area_entered"]
