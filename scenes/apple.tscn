@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bv5vgom43s7hw"]
+
+[ext_resource type="Script" uid="uid://basmgvii374ct" path="res://scripts/apple.gd" id="1_7vr8k"]
+[ext_resource type="Texture2D" uid="uid://bmmodi5gcm5r8" path="res://assets/snake_godot_assets/assets/apple.png" id="1_h071m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7vr8k"]
+size = Vector2(50, 50)
+
+[node name="Apple" type="Area2D"]
+script = ExtResource("1_7vr8k")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -25)
+texture = ExtResource("1_h071m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -25)
+shape = SubResource("RectangleShape2D_7vr8k")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
