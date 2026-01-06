@@ -7,8 +7,8 @@ func randomize_position(occupied: Array):
 	var pos := Vector2.ZERO
 	while true:
 		pos = Vector2(
-			randi() % cells,
-			randi() % cells
+			int(randi() % cells),
+			int(randi() % cells)
 		)
 		if not occupied.has(pos):
 			break

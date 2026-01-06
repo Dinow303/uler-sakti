@@ -22,6 +22,7 @@ autostart = true
 [node name="Snake" parent="." instance=ExtResource("4_lbhrr")]
 
 [node name="Apple" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(25, 75)
 
 [connection signal="timeout" from="wait time" to="." method="_on_wait_time_timeout"]
 [connection signal="area_entered" from="Apple" to="." method="_on_apple_area_entered"]

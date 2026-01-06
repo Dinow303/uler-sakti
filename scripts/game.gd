@@ -32,6 +32,9 @@ func _on_wait_time_timeout() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-
-func _on_apple_area_entered(area: Area2D) -> void:
-	pass # Replace with function body.
+func _on_apple_area_entered(body: Area2D) -> void:
+	if body == snake.snake[0]:
+		score += 1
+		score_hud.get_node("score_label").text = "Score: %d" % score
+		snake.grow()
+		apple.randomize_position(snake.snake_data)

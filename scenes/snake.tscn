@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://blvcawci43r0v"]
 
 [ext_resource type="Script" uid="uid://c3mc0japw8nxl" path="res://scripts/snake.gd" id="1_a5f6l"]
-[ext_resource type="PackedScene" uid="uid://ml6n0vwo5t6t" path="res://scenes/snake_segment.tscn" id="2_yc36x"]
+[ext_resource type="PackedScene" uid="uid://do3s2l7ego1be" path="res://scenes/snake_body.tscn" id="2_yc36x"]
 
 [node name="Snake" type="Node2D"]
 script = ExtResource("1_a5f6l")

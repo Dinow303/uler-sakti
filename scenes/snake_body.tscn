@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://do3s2l7ego1be"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_318k2"]
+bg_color = Color(0.94509804, 0.42352942, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2eow"]
+size = Vector2(50, 50)
+
+[node name="Snake_body" type="CharacterBody2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 50.0
+offset_bottom = 50.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_318k2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(25, 25)
+shape = SubResource("RectangleShape2D_k2eow")
