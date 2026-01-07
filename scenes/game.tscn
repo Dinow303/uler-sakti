@@ -25,4 +25,4 @@ autostart = true
 position = Vector2(25, 75)
 
 [connection signal="timeout" from="wait time" to="." method="_on_wait_time_timeout"]
-[connection signal="area_entered" from="Apple" to="." method="_on_apple_area_entered"]
+[connection signal="body_entered" from="Apple" to="." method="_on_apple_body_entered"]

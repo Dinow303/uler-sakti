@@ -60,7 +60,7 @@ func update_snake():
 
 func grow():
 	var tail = old_data[-1]
-	add_segment(tail)
+	call_deferred("add_segment", tail)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

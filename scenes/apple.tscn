@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bmmodi5gcm5r8" path="res://assets/snake_godot_assets/assets/apple.png" id="1_h071m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7vr8k"]
-size = Vector2(50, 50)
+size = Vector2(26, 26)
 
 [node name="Apple" type="Area2D"]
 script = ExtResource("1_7vr8k")
@@ -16,5 +16,3 @@ texture = ExtResource("1_h071m")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(25, 25)
 shape = SubResource("RectangleShape2D_7vr8k")
-
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
