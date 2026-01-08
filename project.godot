@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="uler sakti"
-run/main_scene="uid://c34gud4tg7gq0"
+run/main_scene="uid://c7yaivdjipp07"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 

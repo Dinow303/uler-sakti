@@ -38,3 +38,4 @@ func _on_apple_body_entered(body: Node2D) -> void:
 		score_hud.get_node("score_label").text = "Score: %d" % score
 		snake.grow()
 		apple.randomize_position(snake.snake_data)
+	
