@@ -39,3 +39,4 @@ func _on_apple_body_entered(body: Node2D) -> void:
 		snake.grow()
 		apple.randomize_position(snake.snake_data)
 	
+#update repo sedang malas coding
